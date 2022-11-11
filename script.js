@@ -9,7 +9,7 @@ var passwordType = {
   specialCharacters: false
 };
 var passwordCharacters = "";
-var passwordResult = "";
+var passwordResults = "";
 
 // Prompts Function
 var generatePassword = function () {
@@ -95,11 +95,11 @@ var generatePassword = function () {
       passwordType.numeric = true;
       passwordType.specialCharacters = true;
       break;
-      
     default:
       window.alert("Invalid entry, please carefully read the instructions to select your criteria.")
       break;
   };
+  
   // Add possible Character Types
   if (passwordType.lowercase) {
     passwordCharacters = "abcdefghijklmnopqrstuvwxyz";
@@ -118,7 +118,7 @@ var generatePassword = function () {
   var passwordCharacterLength = passwordCharacters.length;
 
   // Randomly generate password
-  function generatePassword () {
+  function makePassword () {
     for (var i = 0; i < passwordLength; i++) {
       passwordResults += passwordCharacters.charAt(Math.random() * (passwordCharacterLength - 1) + 1);
     };
@@ -126,7 +126,7 @@ var generatePassword = function () {
   }
   // Alert Message
   window.alert("Generating Your Password...")
-  return generatePassword();
+  return makePassword();
 };
 
 // Get references to the #generate element
